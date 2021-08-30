@@ -1,0 +1,11 @@
+{
+  "name": "ffmpeg-hls",
+  "version": "1.0.0",
+  "description": "Video and audio encoding using ffmpeg with hls encryption.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nihal Ahamed",
+  "license": "MIT"
+}
