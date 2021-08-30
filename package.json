@@ -5,11 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev" : "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "babel ./src -d ./lib",
+    "test": "nyc mocha --require babel-core/register"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LUCIFER-dev-king/FFmpeg-HLS-Encryption.git"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   },
   "keywords": [
     "npm",
@@ -25,5 +33,11 @@
   },
   "dependencies": {
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.1"
   }
 }
