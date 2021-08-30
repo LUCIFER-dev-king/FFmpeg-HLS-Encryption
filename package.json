@@ -4,8 +4,26 @@
   "description": "Video and audio encoding using ffmpeg with hls encryption.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev" : "nodemon index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LUCIFER-dev-king/FFmpeg-HLS-Encryption.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "FFmpeg",
+    "HLS",
+    "FFmpeg-HLS encryption"
+  ],
   "author": "Nihal Ahamed",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LUCIFER-dev-king/FFmpeg-HLS-Encryption/issues"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
