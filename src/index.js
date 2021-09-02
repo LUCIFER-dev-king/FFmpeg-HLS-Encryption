@@ -1,23 +1,18 @@
-// regex that checks if value contains digits only
-const digitsOnly = /^\d+$/;
+const { exec } = require("child_process");
 
-// function to mask digits into US phone format
-function maskUSPhone(phone) {
-  // returning null when getting null, undefined, or an object that is no string as a parameter
-  if (!phone || typeof phone !== "string") {
-    return null;
-  }
+const encodeVideo = (id, video, uri) => {
+  exec(
+    `cd encryptedVideos && cd ${id} && openssl rand 16 > ${id}.key && echo ${uri} > ${id}.keyinfo && echo ${id}.key >> ${id}.keyinfo && ffmpeg -y -i ${video} -hls_time 9 -hls_key_info_file ${id}.keyinfo -hls_playlist_type vod -hls_segment_filename "fileSequence%d.ts" prog_index.m3u8`,
+    (error, stdout, stderr) => {
+      if (error) {
+        console.log(error.message);
+      } else {
+        console.log("key created");
+      }
+    }
+  );
+};
 
-  // returning the untouched value when it contains non-digit chars or when it has a length != 10
-  if (digitsOnly.test(phone) === false || phone.length !== 10) {
-    return phone;
-  }
+// encodeVideo();
 
-  // returning the masked value
-  const codeArea = phone.substring(0, 3);
-  const prefix = phone.substring(3, 6);
-  const sufix = phone.substring(6, 10);
-  return `(${codeArea}) ${prefix}-${sufix}`;
-}
-
-export default maskUSPhone;
+module.exports = encodeVideo;
