@@ -32,6 +32,4 @@ var encodeVideo = function encodeVideo(id, video, uri) {
   );
 };
 
-// encodeVideo();
-
 module.exports = encodeVideo;
