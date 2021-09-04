@@ -7,7 +7,7 @@ const encodeVideo = (id, video, uri) => {
       if (error) {
         console.log(error.message);
       } else {
-        console.log("key created");
+        console.log("key file created");
       }
     }
   );
