@@ -1,1 +1,1 @@
-# NodeJS package for HLS encryption using FFmpeg
+# NodeJS package for HLS encryption using FFmpeg.
